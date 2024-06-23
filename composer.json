@@ -1,0 +1,15 @@
+{
+    "name": "kaneki/users",
+    "autoload": {
+        "psr-4": {
+           "Core\\": "Core/",
+           "Http\\": "Http/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mohye Mahmoud"
+        }
+    ],
+    "require": {}
+}
