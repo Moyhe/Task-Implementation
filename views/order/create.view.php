@@ -65,12 +65,9 @@
                         </div>
                     </div>
 
-
-
                     <div>
                         <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">order</button>
                     </div>
-
 
                 </form>
             </div>
@@ -78,10 +75,42 @@
         <div class="mt-40">
             <label for="search" class="block text-sm font-medium leading-6 text-gray-900">Search</label>
             <div class="mt-2">
-                <input id="search" name="search" type="text" autocomplete="search" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                <input id="search" type="text" autocomplete="search" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
             </div>
+            <div class="result"></div>
         </div>
     </div>
 </main>
 
 <?php require base_path('views/partials/footer.php') ?>
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        $('#search').on('keyup', function() {
+            value = $('#search').val();
+            $.ajax({
+                url: '/search',
+                type: 'get',
+                datatype: 'html',
+                data: {
+                    search: value
+                },
+                success: function(response) {
+                    if (value) {
+                        $('.result').html(response);
+                    } else {
+                        $('.result').html('');
+                    }
+
+                },
+                error: function() {
+                    console.log("error");
+                }
+            });
+        })
+
+
+    });
+</script>
