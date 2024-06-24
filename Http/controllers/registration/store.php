@@ -40,6 +40,7 @@ if ($user) {
         'password' => password_hash($password, PASSWORD_BCRYPT)
     ]);
 
+
     Session::put('name', $name);
 
     header('location: /');
