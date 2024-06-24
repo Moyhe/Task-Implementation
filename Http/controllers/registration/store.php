@@ -1,8 +1,8 @@
 <?php
 
 use Core\App;
-use Core\Authenticator;
 use Core\Database;
+use Core\Session;
 use Core\Validator;
 
 $db = App::resolve(Database::class);
@@ -39,6 +39,8 @@ if ($user) {
         'email' => $email,
         'password' => password_hash($password, PASSWORD_BCRYPT)
     ]);
+
+    Session::put('name', $name);
 
     header('location: /');
     exit();
