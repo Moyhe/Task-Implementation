@@ -18,7 +18,6 @@
                 <?=
                 (new DateTimeImmutable($user['created_at']))->format('Y-m-d');
                 ?>
-
             </td>
             <td class="px-4 py-3"><?= $user['purchases'] ?></td>
             <td class="px-4 py-3">
