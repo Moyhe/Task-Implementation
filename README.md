@@ -10,6 +10,8 @@
 
     composer install
 
-3- to run the project, navigate to the public folder and run
+3- install xampp or mysql and prepare database configuration
+
+4- to run the project, navigate to the public folder and run
 
     php -S localhost:8000
