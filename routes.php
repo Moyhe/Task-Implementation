@@ -7,6 +7,7 @@ $router->post('/register', 'registration/store.php');
 
 // orders
 $router->get('/order', 'order/create.php');
+$router->get('/order/details', 'order/index.php');
 $router->post('/order', 'order/store.php');
 
 // search

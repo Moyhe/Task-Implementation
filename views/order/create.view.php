@@ -103,7 +103,6 @@
                     } else {
                         $('.result').html('');
                     }
-
                 },
                 error: function() {
                     console.log("error");
